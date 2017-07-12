@@ -1,3 +1,13 @@
 language: ruby
 rvm:
-  - 2.4.1
+- 2.4.1
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: shenapplymail@163.com
+  password:
+    secure: kp6e2j1K1oroN5yUTKOEhB5k94rvRXBfcveJsRb4FSuywO6s+5ln6153DfyTgQz6s78yUVa/wdYzlQMDcmzc/S+POj2H/Vrd4bMPIAgdM91M6FUEf2ibjPbu3YnQ9XG0LIuPKsAewIK9TzsWgpVmos8FlBw895n8QxRuoKGCxTZK3O8i4h6Hr9Clntpk3BsItR6xi6mDuLynEKGulsR0d7miSZHeN1hQUyORxkp4WZ9p/+fILMNR2eLb5U7tQzqzzvbgPPG6JHZM5UPD4iixzmQzXCeIKnCtjsAPQxfzAs9BlDIateZRQ57+mQ9KK8ixX+NgYZ4Zlb7qzsRhf9Yr4PuJd52JX5zWOmU6HTDnXNwcz+cabN9c+Mn9r4oNdvVGUAKzfZHSzX0oMkaz/fn12NBu0cuqRhetYwOEgPzsJOTcCJ5MKH8xNAiaCkLFcyLqOZvsp6mlCNoUjG49N6gysyJmxum/bFgVnETxgCw2wNyv+n9ZUvUYRaCIWewSn/lVT70JvylZTl4HyTFpikZ0Wy4Z6xkq14+1eoRXPQfUgj2U/VTCwtO4KP7LwDm58wNOyWFfZtpoepZRIVar+26tpQx908qB0/3bjesOmkgxw9Yzuwo7LdVGhbjFq54rMSBAXyd5L0wMwRZ+UAzZmn12+gQpcBNpea0l/hHY1a0zQ2Q=
+  organization: red-precious-2
+  space: development
+  on:
+    repo: Teresast/red_precious_2
