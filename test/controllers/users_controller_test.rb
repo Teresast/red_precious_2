@@ -2,7 +2,8 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = User.create(name: "Example User", email: "user@example.com",
+                     password: "foobar", password_confirmation: "foobar")
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { description: @user.description, name: @user.name, picture: @user.picture } }
+      post users_url, params: { user: { description: 'description', name: @user.name, picture: @user.picture, email: 'email@example.com', password: @user.password, password_confirmation: @user.password_confirmation } }
     end
 
     assert_redirected_to user_url(User.last)
@@ -34,7 +35,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { description: @user.description, name: @user.name, picture: @user.picture } }
+    patch user_url(@user), params: { user: { description: @user.description, name: @user.name, picture: @user.picture, email: @user.email, password: @user.password, password_confirmation: @user.password_confirmation } }
     assert_redirected_to user_url(@user)
   end
 
